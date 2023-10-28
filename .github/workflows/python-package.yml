@@ -22,11 +22,8 @@ jobs:
       run: |
         python neunscript.py
       working-directory: ${{ github.workspace }}
-    - name: Create dist folder
-      run: |
-        mkdir dist
-      working-directory: ${{ github.workspace }}
-    - name: Move files to dist folder
-      run: |
-        mv /path/to/generated/files/* dist/
-      working-directory: ${{ github.workspace }}
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: dist
