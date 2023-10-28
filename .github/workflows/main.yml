@@ -1,24 +1,31 @@
-name: Run Script
+name: dist
 
 on:
-  workflow_dispatch:  # The workflow will be triggered manually
+  workflow_dispatch:
+    inputs:
+      run-script:
+        description: 'Run Custom Script'
+        required: true
+        default: 'neunscript.py'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          pip install requests pyjson5 python_nbt
+    - name: Install dependencies
+      run: |
+        pip install requests pyjson5 python_nbt
+      working-directory: ${{ github.workspace }}
 
-      - name: Execute Python script
-        run: python neunscript.py
+    - name: Run the custom Python script
+      run: python ${{ github.workspace }}/${{ inputs.run-script }}
+      working-directory: ${{ github.workspace }}
