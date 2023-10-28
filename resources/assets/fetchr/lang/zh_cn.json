@@ -1,6 +1,4 @@
 {
-	"fetchr.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
-	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "%s",
 	"fetchr.error.command_blocks_disabled": "此服务器已禁用命令块，请确保server.properties文件中的所有值都按%s所述设置。",
 	"fetchr.error.command_blocks_disabled.link": "这里",
 	"fetchr.logging.error": "错误",
