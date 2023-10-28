@@ -1,3 +1,6 @@
+# Tips
+100%中文汉化，如有遗漏再补全，保持从主分支更新
+
 # Fetchr
 Fetchr is a custom gamemode where you play in survival Minecraft with a 5x5 Bingo board.
 
